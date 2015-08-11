@@ -7,11 +7,37 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
-  
+
 </head>
 <body>
 <%= render 'layouts/header' %>
 <%= yield %>
 
+
+<script>
+ 
+  $(document).ready(function(){
+    
+    $('a[href^="#"]').on('click',function (e) {
+
+      if ( $( this ).data( "role" ) == "tab") {
+           //do nothing; for those dont wanna move focus to the target
+          
+      } else {
+        //alert('n');
+        e.preventDefault();
+
+        var target = this.hash,
+        $target = $(target);
+       
+        $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+          }, 900, 'swing', function () {
+          window.location.hash = target;
+        });
+      }
+    });
+  });
+</script>
 </body>
 </html>

@@ -50,7 +50,7 @@ header .container {
 	//margin-top:100px;
 	margin-bottom:50px;
 
-	background: url("background.jpg") no-repeat;
+	background: asset-url("background.jpg") no-repeat;
    	background-size: cover;
     //background-size: contain;
     height:900px;
@@ -74,7 +74,7 @@ header .container {
 	}
 }
 
-.portfolio-section, .experience-section, .education-section, .intro-section {
+.portfolio-section, .experience-section, .skills-section, .education-section, .intro-section {
 	padding-top:60px;
 	margin-bottom:60px;
 }
